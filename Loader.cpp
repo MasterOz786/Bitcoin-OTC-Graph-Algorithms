@@ -21,8 +21,8 @@ Nodes Loader::load(const char* filename) {
         getline(ss, weight, ',');
         getline(ss, timestamp, ',');
 
-        std::cout << "From: " << source << ", To: " << dest
-                  << ", Rating: " << weight << ", Timestamp: " << timestamp << '\n';
+        // std::cout << "From: " << source << ", To: " << dest
+        //           << ", Rating: " << weight << ", Timestamp: " << timestamp << '\n';
         
         
         Node n;

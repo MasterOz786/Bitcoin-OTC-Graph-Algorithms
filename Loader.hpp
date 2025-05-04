@@ -7,6 +7,7 @@
 #include <unordered_map>
 
 #define DATASET_FILENAME "soc-sign-bitcoinotc.csv"
+#define SHORT_DATASET_FILENAME "soc.csv"
 
 struct Node {
     int source; // from which user

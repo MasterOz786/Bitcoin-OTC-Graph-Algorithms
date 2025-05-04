@@ -13,4 +13,5 @@ public:
     void printAdjList() const;
     void buildAdjacencyList();
     const AdjacencyList& getAdjacencyList() const;
+    void dijkstra(int);
 };
