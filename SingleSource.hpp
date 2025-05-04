@@ -14,4 +14,5 @@ public:
     void buildAdjacencyList();
     const AdjacencyList& getAdjacencyList() const;
     void dijkstra(int);
+    void bellmanFord(int);
 };

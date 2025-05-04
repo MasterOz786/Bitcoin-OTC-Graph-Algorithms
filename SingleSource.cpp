@@ -12,7 +12,7 @@ void SingleSource::addEdge(const Node& node, bool bidirectional) {
 }
 
 void SingleSource::buildAdjacencyList() {
-    Nodes nodes = Loader::load(SHORT_DATASET_FILENAME);
+    Nodes nodes = Loader::load(BELLMANFORD_DATASET_FILENAME);
 
     for (auto node: nodes) {
         addEdge(node, true);
@@ -37,6 +37,7 @@ void SingleSource::printAdjList() const {
 const AdjacencyList& SingleSource::getAdjacencyList() const {
     return adjList;
 }
+
 
 void SingleSource::dijkstra(int source) {
     std::unordered_map<int, int> distance;
@@ -75,9 +76,56 @@ void SingleSource::dijkstra(int source) {
 }
 
 
+void SingleSource::bellmanFord(int source) {
+    std::unordered_map<int, int> distance;
+    for (const std::pair<const int, std::vector<std::pair<int, int>>>& node : adjList) {
+        distance[node.first] = std::numeric_limits<int>::max();
+    }
+    distance[source] = 0;
+
+    int V = adjList.size();
+    for (int i = 0; i < V - 1; ++i) {
+        for (const std::pair<const int, std::vector<std::pair<int, int>>>& node : adjList) {
+            int u = node.first;
+            const std::vector<std::pair<int, int>>& neighbors = node.second;
+            for (size_t j = 0; j < neighbors.size(); ++j) {
+                int v = neighbors[j].first;
+                int weight = neighbors[j].second;
+                if (distance[u] != std::numeric_limits<int>::max() &&
+                    distance[u] + weight < distance[v]) {
+                    distance[v] = distance[u] + weight;
+                }
+            }
+        }
+    }
+
+    // Check for negative-weight cycles
+    for (const std::pair<const int, std::vector<std::pair<int, int>>>& node : adjList) {
+        int u = node.first;
+        const std::vector<std::pair<int, int>>& neighbors = node.second;
+        for (size_t j = 0; j < neighbors.size(); ++j) {
+            int v = neighbors[j].first;
+            int weight = neighbors[j].second;
+            if (distance[u] != std::numeric_limits<int>::max() &&
+                distance[u] + weight < distance[v]) {
+                std::cerr << "Graph contains negative weight cycle\n";
+                return;
+            }
+        }
+    }
+
+    std::cout << "Bellman-Ford distances from node " << source << ":\n";
+    for (const std::pair<const int, int>& pair : distance) {
+        std::cout << "Node " << pair.first << " -> Distance: " << pair.second << '\n';
+    }
+}
+
+
 int main() {
     SingleSource ss;
     ss.buildAdjacencyList();
     ss.dijkstra(6);
+    ss.bellmanFord(6);
+
     return 0;
 }
