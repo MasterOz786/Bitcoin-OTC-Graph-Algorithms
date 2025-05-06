@@ -1,0 +1,6 @@
+Enter: 1
+Enter: 5925
+Enter: 2067
+Enter: 2045
+Enter: 4608
+Cycle detected at node 2045
