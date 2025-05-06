@@ -1,0 +1,5 @@
+g++ -std=c++11 DFS.cpp Loader.cpp -o dfs
+
+g++ -std=c++11 BFS.cpp Loader.cpp -o bfs
+
+g++ -std=c++11 Cycle_detection.cpp Loader.cpp -o cycle
