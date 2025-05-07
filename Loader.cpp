@@ -37,4 +37,3 @@ Nodes Loader::load(const char* filename) {
     file.close();
     return data;
 }
-

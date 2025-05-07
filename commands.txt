@@ -1,0 +1,3 @@
+g++ -std=c++11 Traversers.cpp Loader.cpp -o traversers
+
+g++ -std=c++11 
