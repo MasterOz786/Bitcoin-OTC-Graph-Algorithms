@@ -1,0 +1,5 @@
+Selected edge: 1 - 5 (weight 3)
+Selected edge: 5 - 4 (weight 1)
+Selected edge: 4 - 3 (weight -3)
+Selected edge: 3 - 2 (weight 1)
+Total MST weight: 2

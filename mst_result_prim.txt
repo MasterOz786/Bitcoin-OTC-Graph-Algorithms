@@ -1,0 +1,7 @@
+Prim's MST Edges:
+1 - 5 (weight 3)
+5 - 4 (weight 1)
+4 - 3 (weight -3)
+3 - 2 (weight 1)
+Total weight: 2
+Execution time: 1.008 ms
