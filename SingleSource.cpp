@@ -13,7 +13,7 @@ void SingleSource::addEdge(const Node& node) {
 }
 
 void SingleSource::buildAdjacencyList(bool biDirectional) {
-    Nodes nodes = Loader::load(BELLMANFORD_DATASET_FILENAME);
+    Nodes nodes = Loader::load(MINIMUM_DATASET_FILENAME);
     this->biDirectional = biDirectional;
 
     for (auto node: nodes) {
@@ -233,16 +233,15 @@ int main() {
     SingleSource ss;
     ss.buildAdjacencyList(true);
 
-    int sourceNode;
-    std::cout << "Source Node for Dijkstra: ";
-    std::cin >> sourceNode;
-    ss.dijkstra(sourceNode);
+    // int sourceNode;
+    // std::cout << "Source Node for Dijkstra: ";
+    // std::cin >> sourceNode;
+    // ss.dijkstra(sourceNode);
 
-    std::cout << "\nSource Node for Bellman Ford: ";
-    std::cin >> sourceNode;
-    ss.bellmanFord(sourceNode);
+    // std::cout << "\nSource Node for Bellman Ford: ";
+    // std::cin >> sourceNode;
+    // ss.bellmanFord(sourceNode);
     
-    std::cout << "\nAverage Degree => " << ss.averageDegree() << '\n';
     std::cout << "Diameter of the Graph => " << ss.diameter() << '\n';
 
     return 0;

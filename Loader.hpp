@@ -1,4 +1,4 @@
-
+#pragma once
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -7,6 +7,7 @@
 #include <unordered_map>
 
 #define DATASET_FILENAME "soc-sign-bitcoinotc.csv"
+#define MINIMUM_DATASET_FILENAME "truncated-for-project-requirements.csv"
 #define DIJKSTRA_DATASET_FILENAME "truncated-for-dijkstra.csv"
 #define BELLMANFORD_DATASET_FILENAME "truncated-for-bellmanFord.csv"
 

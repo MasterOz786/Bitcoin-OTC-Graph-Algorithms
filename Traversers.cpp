@@ -101,7 +101,7 @@ void Traversers::bfs(Graph* g, int source, int nodeCount, const char* rollNumber
 
     ::ofstream traversalFile(traversalFileName);
     ::ofstream traceFile(traceFileName);
-    ::ofstream timeFile(timeFileName);
+    ::ofstream timeFile(timeFileName, ios::app);
 
     int visited[MAX_NODES] = {0};
     int traversal[MAX_NODES];
