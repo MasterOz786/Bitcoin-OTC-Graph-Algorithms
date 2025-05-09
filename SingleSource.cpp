@@ -1,8 +1,9 @@
-
 #include "SingleSource.hpp"
 
 #include <limits>
 #include <queue>
+#include <fstream>
+#include <chrono>
 
 void SingleSource::addEdge(const Node& node) {
     adjList[node.source].emplace_back(node.dest, node.weight);
@@ -20,7 +21,6 @@ void SingleSource::buildAdjacencyList(bool biDirectional) {
     }
 }
 
-// Print the adjacency list
 void SingleSource::printAdjList() const {
     for (const std::pair<const int, std::vector<EdgeWeight>>& node : adjList) {
         std::cout << node.first << " -> ";
@@ -34,95 +34,123 @@ void SingleSource::printAdjList() const {
     }
 }
 
-// Getter for adjacency list (if needed externally)
 const AdjacencyList& SingleSource::getAdjacencyList() const {
     return adjList;
 }
 
-
 void SingleSource::dijkstra(int source) {
+    std::ofstream timeFile("Dijkstra_ExecutionTime_22I-2434.txt", std::ios::app);
+    std::ofstream resultFile("Dijkstra_Result_22I-2434.txt", std::ios::app);
+    std::ofstream traceFile("Dijkstra_Trace_22I-2434.txt", std::ios::app);
+
+    auto start = std::chrono::high_resolution_clock::now();
+
     std::unordered_map<int, int> distance;
-    for (const std::pair<const int, std::vector<std::pair<int, int>>>& node : adjList) {
+    for (const auto& node : adjList) {
         distance[node.first] = std::numeric_limits<int>::max();
     }
     distance[source] = 0;
 
-    using pii = std::pair<int, int>; // distance, node
+    using pii = std::pair<int, int>;
     std::priority_queue<pii, std::vector<pii>, std::greater<pii>> pq;
-    pq.push(std::make_pair(0, source));
+    pq.push({0, source});
+
+    traceFile << "Starting Dijkstra's algorithm from source node " << source << "\n";
 
     while (!pq.empty()) {
-        pii current = pq.top();
+        auto [dist, node] = pq.top();
         pq.pop();
-        int dist = current.first;
-        int node = current.second;
+        traceFile << "Processing node " << node << " with distance " << dist << "\n";
 
         if (dist > distance[node]) continue;
 
-        const std::vector<std::pair<int, int>>& neighbors = adjList.at(node);
-        for (size_t i = 0; i < neighbors.size(); ++i) {
-            int neighbor = neighbors[i].first;
-            int weight = neighbors[i].second;
+        for (const auto& [neighbor, weight] : adjList[node]) {
             if (distance[node] + weight < distance[neighbor]) {
                 distance[neighbor] = distance[node] + weight;
-                pq.push(std::make_pair(distance[neighbor], neighbor));
+                pq.push({distance[neighbor], neighbor});
+                traceFile << "Updated distance to node " << neighbor << ": " << distance[neighbor] << "\n";
             }
         }
     }
 
-    std::cout << "Dijkstra distances from node " << source << ":\n";
-    for (const std::pair<const int, int>& pair : distance) {
-        std::cout << "Node " << pair.first << " -> Distance: " << pair.second << '\n';
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+    resultFile << "Dijkstra distances from node " << source << ":\n";
+    for (const auto& [node, dist] : distance) {
+        resultFile << "Node " << node << " -> Distance: " << dist << "\n";
+        std::cout << "Node " << node << " -> Distance: " << dist << "\n";
     }
+
+    timeFile << "Input size: " << adjList.size() << " nodes\n";
+    timeFile << "Execution time: " << duration << " milliseconds\n";
+    
+    timeFile.close();
+    resultFile.close();
+    traceFile.close();
 }
 
-
 void SingleSource::bellmanFord(int source) {
+    std::ofstream timeFile("BellmanFord_ExecutionTime_22I-2434.txt", std::ios::app);
+    std::ofstream resultFile("BellmanFord_Result_22I-2434.txt", std::ios::app);
+    std::ofstream traceFile("BellmanFord_Trace_22I-2434.txt", std::ios::app);
+
+    auto start = std::chrono::high_resolution_clock::now();
+
     std::unordered_map<int, int> distance;
-    for (const std::pair<const int, std::vector<std::pair<int, int>>>& node : adjList) {
+    for (const auto& node : adjList) {
         distance[node.first] = std::numeric_limits<int>::max();
     }
     distance[source] = 0;
 
     int V = adjList.size();
+    traceFile << "Starting Bellman-Ford algorithm from source node " << source << "\n";
+
     for (int i = 0; i < V - 1; ++i) {
-        for (const std::pair<const int, std::vector<std::pair<int, int>>>& node : adjList) {
-            int u = node.first;
-            const std::vector<std::pair<int, int>>& neighbors = node.second;
-            for (size_t j = 0; j < neighbors.size(); ++j) {
-                int v = neighbors[j].first;
-                int weight = neighbors[j].second;
+        traceFile << "Iteration " << i + 1 << "\n";
+        for (const auto& [u, edges] : adjList) {
+            for (const auto& [v, weight] : edges) {
                 if (distance[u] != std::numeric_limits<int>::max() &&
                     distance[u] + weight < distance[v]) {
                     distance[v] = distance[u] + weight;
+                    traceFile << "Updated distance to node " << v << ": " << distance[v] << "\n";
                 }
             }
         }
     }
 
-    // Check for negative-weight cycles
-    for (const std::pair<const int, std::vector<std::pair<int, int>>>& node : adjList) {
-        int u = node.first;
-        const std::vector<std::pair<int, int>>& neighbors = node.second;
-        for (size_t j = 0; j < neighbors.size(); ++j) {
-            int v = neighbors[j].first;
-            int weight = neighbors[j].second;
+    // Check for negative cycles
+    for (const auto& [u, edges] : adjList) {
+        for (const auto& [v, weight] : edges) {
             if (distance[u] != std::numeric_limits<int>::max() &&
                 distance[u] + weight < distance[v]) {
+                traceFile << "Negative cycle detected!\n";
                 std::cerr << "Graph contains negative weight cycle\n";
                 return;
             }
         }
     }
 
-    std::cout << "Bellman-Ford distances from node " << source << ":\n";
-    for (const std::pair<const int, int>& pair : distance) {
-        std::cout << "Node " << pair.first << " -> Distance: " << pair.second << '\n';
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+
+    resultFile << "Bellman-Ford distances from node " << source << ":\n";
+    for (const auto& [node, dist] : distance) {
+        resultFile << "Node " << node << " -> Distance: " << dist << "\n";
+        std::cout << "Node " << node << " -> Distance: " << dist << "\n";
     }
+
+    timeFile << "Input size: " << adjList.size() << " nodes\n";
+    timeFile << "Execution time: " << duration << " microseconds\n";
+
+    timeFile.close();
+    resultFile.close();
+    traceFile.close();
 }
 
-// Calculates the average degree
 double SingleSource::averageDegree() const {
+    std::ofstream resultFile("AverageDegree_Result_22I-2515.txt");
+    
     int edgeCount = 0;
     int nodeCount = adjList.size();
 
@@ -130,14 +158,27 @@ double SingleSource::averageDegree() const {
         edgeCount += pair.second.size();
     }
 
-    // For undirected graph, divide edgeCount by 2 to avoid double counting
-    double avgDegree = this->biDirectional? static_cast<double>(edgeCount) / nodeCount : edgeCount; 
+    double avgDegree = this->biDirectional ? 
+        static_cast<double>(edgeCount) / nodeCount : 
+        static_cast<double>(edgeCount);
+    
+    resultFile << "Number of nodes: " << nodeCount << "\n";
+    resultFile << "Number of edges: " << edgeCount << "\n";
+    resultFile << "Average degree: " << avgDegree << "\n";
+    
+    resultFile.close();
     return avgDegree;
 }
 
-// Calculates the graph diameter using Dijkstra (weighted) from every node
 double SingleSource::diameter() const {
+    std::ofstream timeFile("Diameter_ExecutionTime_22I-2434.txt");
+    std::ofstream resultFile("Diameter_Result_22I-2434.txt");
+    std::ofstream traceFile("Diameter_Trace_22I-2434.txt");
+
+    auto start = std::chrono::high_resolution_clock::now();
+    
     int maxDistance = 0;
+    traceFile << "Starting diameter calculation\n";
 
     for (const auto& [start, _] : adjList) {
         std::unordered_map<int, int> distance;
@@ -146,9 +187,11 @@ double SingleSource::diameter() const {
         }
         distance[start] = 0;
 
-        using pii = std::pair<int, int>; // (distance, node)
+        using pii = std::pair<int, int>;
         std::priority_queue<pii, std::vector<pii>, std::greater<pii>> pq;
         pq.push({0, start});
+
+        traceFile << "\nCalculating distances from node " << start << "\n";
 
         while (!pq.empty()) {
             auto [dist, node] = pq.top();
@@ -160,6 +203,7 @@ double SingleSource::diameter() const {
                 if (distance[node] + weight < distance[neighbor]) {
                     distance[neighbor] = distance[node] + weight;
                     pq.push({distance[neighbor], neighbor});
+                    traceFile << "Updated distance to node " << neighbor << ": " << distance[neighbor] << "\n";
                 }
             }
         }
@@ -171,26 +215,34 @@ double SingleSource::diameter() const {
         }
     }
 
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+
+    resultFile << "Graph diameter: " << maxDistance << "\n";
+    timeFile << "Input size: " << adjList.size() << " nodes\n";
+    timeFile << "Execution time: " << duration << " microseconds\n";
+
+    timeFile.close();
+    resultFile.close();
+    traceFile.close();
+
     return maxDistance;
 }
 
-
 int main() {
     SingleSource ss;
-
     ss.buildAdjacencyList(true);
 
     int sourceNode;
-
     std::cout << "Source Node for Dijkstra: ";
     std::cin >> sourceNode;
     ss.dijkstra(sourceNode);
 
-    std::cout << "Source Node for Bellman Ford: ";
+    std::cout << "\nSource Node for Bellman Ford: ";
     std::cin >> sourceNode;
     ss.bellmanFord(sourceNode);
     
-    std::cout << "Average Degree => " << ss.averageDegree() << '\n';
+    std::cout << "\nAverage Degree => " << ss.averageDegree() << '\n';
     std::cout << "Diameter of the Graph => " << ss.diameter() << '\n';
 
     return 0;

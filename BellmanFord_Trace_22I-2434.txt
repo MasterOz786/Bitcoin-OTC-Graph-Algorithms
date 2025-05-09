@@ -1,0 +1,346 @@
+Starting Bellman-Ford algorithm from source node 1
+Iteration 1
+Updated distance to node 15: 1
+Updated distance to node 21: 8
+Updated distance to node 10: 8
+Updated distance to node 5: 3
+Updated distance to node 13: 8
+Updated distance to node 32: 1
+Updated distance to node 34: 1
+Updated distance to node 17: 9
+Updated distance to node 31: 2
+Updated distance to node 13: 3
+Updated distance to node 35: 1
+Updated distance to node 8: 3
+Updated distance to node 20: 2
+Updated distance to node 47: 2
+Updated distance to node 54: 1
+Updated distance to node 56: 2
+Updated distance to node 71: 1
+Updated distance to node 74: 1
+Updated distance to node 78: 1
+Updated distance to node 68: 2
+Updated distance to node 81: 1
+Updated distance to node 101: 1
+Updated distance to node 119: 1
+Updated distance to node 100: 3
+Updated distance to node 2: 8
+Updated distance to node 76: 2
+Updated distance to node 23: 6
+Updated distance to node 77: 3
+Updated distance to node 111: 1
+Updated distance to node 138: 1
+Updated distance to node 110: 1
+Updated distance to node 145: 1
+Updated distance to node 114: 2
+Updated distance to node 7: 9
+Updated distance to node 7: 7
+Updated distance to node 165: 1
+Updated distance to node 75: 2
+Updated distance to node 19: 6
+Updated distance to node 6: 5
+Updated distance to node 7: 4
+Updated distance to node 7: 2
+Updated distance to node 13: 2
+Updated distance to node 97: 3
+Updated distance to node 70: 2
+Updated distance to node 77: 2
+Updated distance to node 96: 5
+Updated distance to node 96: 4
+Updated distance to node 4: 13
+Updated distance to node 61: 10
+Updated distance to node 132: 10
+Updated distance to node 3: 16
+Updated distance to node 142: 9
+Updated distance to node 146: 9
+Updated distance to node 149: 9
+Updated distance to node 166: 9
+Updated distance to node 156: 9
+Updated distance to node 4: 3
+Updated distance to node 6: 3
+Updated distance to node 65: 2
+Updated distance to node 69: 2
+Updated distance to node 79: 2
+Updated distance to node 10: 4
+Updated distance to node 3: 14
+Updated distance to node 28: 10
+Updated distance to node 39: 12
+Updated distance to node 39: 10
+Updated distance to node 17: 7
+Updated distance to node 108: 7
+Updated distance to node 113: 8
+Updated distance to node 106: 5
+Updated distance to node 107: 6
+Updated distance to node 100: 2
+Updated distance to node 103: 2
+Updated distance to node 60: 4
+Updated distance to node 132: 3
+Updated distance to node 64: 3
+Updated distance to node 104: 8
+Updated distance to node 41: 2
+Updated distance to node 57: 2
+Updated distance to node 142: 2
+Updated distance to node 143: 2
+Updated distance to node 134: 2
+Updated distance to node 2: 2
+Updated distance to node 144: 2
+Updated distance to node 155: 2
+Updated distance to node 104: 2
+Updated distance to node 39: 3
+Updated distance to node 149: 3
+Updated distance to node 146: 3
+Updated distance to node 21: 3
+Updated distance to node 127: 11
+Updated distance to node 25: 2
+Updated distance to node 125: 10
+Updated distance to node 135: 10
+Updated distance to node 158: 9
+Updated distance to node 173: 10
+Updated distance to node 173: 9
+Updated distance to node 132: 2
+Updated distance to node 150: 4
+Updated distance to node 129: 4
+Updated distance to node 173: 4
+Iteration 2
+Updated distance to node 113: 6
+Updated distance to node 113: 5
+Updated distance to node 17: 2
+Updated distance to node 107: 3
+Updated distance to node 93: 3
+Updated distance to node 149: 2
+Updated distance to node 61: 6
+Updated distance to node 112: 3
+Updated distance to node 115: 5
+Updated distance to node 23: 3
+Updated distance to node 28: 5
+Updated distance to node 131: 3
+Updated distance to node 61: 5
+Updated distance to node 95: 3
+Updated distance to node 96: 3
+Updated distance to node 36: 4
+Updated distance to node 60: 3
+Updated distance to node 83: 3
+Updated distance to node 86: 3
+Updated distance to node 89: 3
+Updated distance to node 105: 3
+Updated distance to node 137: 3
+Updated distance to node 140: 3
+Updated distance to node 148: 3
+Updated distance to node 147: 3
+Updated distance to node 157: 3
+Updated distance to node 163: 3
+Updated distance to node 162: 3
+Updated distance to node 167: 3
+Updated distance to node 168: 3
+Updated distance to node 174: 3
+Updated distance to node 45: 3
+Updated distance to node 62: 3
+Updated distance to node 129: 2
+Updated distance to node 60: 2
+Updated distance to node 36: 3
+Updated distance to node 146: 2
+Updated distance to node 122: 2
+Updated distance to node 3: 10
+Updated distance to node 182: 4
+Updated distance to node 29: 4
+Updated distance to node 3: 8
+Updated distance to node 53: 6
+Updated distance to node 55: 3
+Updated distance to node 28: 4
+Updated distance to node 28: 3
+Updated distance to node 88: 5
+Updated distance to node 109: 3
+Updated distance to node 116: 4
+Updated distance to node 133: 3
+Updated distance to node 141: 4
+Updated distance to node 161: 5
+Updated distance to node 175: 4
+Updated distance to node 166: 3
+Updated distance to node 37: 4
+Updated distance to node 46: 4
+Updated distance to node 99: 6
+Updated distance to node 99: 3
+Updated distance to node 44: 4
+Updated distance to node 152: 4
+Updated distance to node 113: 4
+Updated distance to node 156: 5
+Updated distance to node 180: 4
+Updated distance to node 16: 10
+Updated distance to node 152: 3
+Updated distance to node 179: 3
+Updated distance to node 80: 3
+Updated distance to node 173: 3
+Updated distance to node 135: 3
+Updated distance to node 53: 5
+Updated distance to node 171: 5
+Updated distance to node 176: 6
+Updated distance to node 6: 2
+Updated distance to node 23: 2
+Updated distance to node 26: 4
+Updated distance to node 66: 5
+Updated distance to node 72: 7
+Updated distance to node 87: 4
+Updated distance to node 87: 3
+Updated distance to node 108: 3
+Updated distance to node 160: 3
+Updated distance to node 172: 3
+Updated distance to node 94: 4
+Updated distance to node 3: 4
+Updated distance to node 127: 3
+Updated distance to node 139: 3
+Updated distance to node 169: 4
+Updated distance to node 181: 3
+Updated distance to node 159: 3
+Updated distance to node 177: 6
+Updated distance to node 170: 3
+Updated distance to node 61: 4
+Updated distance to node 156: 3
+Updated distance to node 161: 3
+Updated distance to node 178: 3
+Updated distance to node 19: 3
+Updated distance to node 154: 4
+Updated distance to node 51: 5
+Updated distance to node 52: 5
+Updated distance to node 153: 4
+Updated distance to node 106: 4
+Updated distance to node 125: 6
+Updated distance to node 158: 5
+Updated distance to node 150: 3
+Iteration 3
+Updated distance to node 177: 4
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+Iteration 47
+Iteration 48
+Iteration 49
+Iteration 50
+Iteration 51
+Iteration 52
+Iteration 53
+Iteration 54
+Iteration 55
+Iteration 56
+Iteration 57
+Iteration 58
+Iteration 59
+Iteration 60
+Iteration 61
+Iteration 62
+Iteration 63
+Iteration 64
+Iteration 65
+Iteration 66
+Iteration 67
+Iteration 68
+Iteration 69
+Iteration 70
+Iteration 71
+Iteration 72
+Iteration 73
+Iteration 74
+Iteration 75
+Iteration 76
+Iteration 77
+Iteration 78
+Iteration 79
+Iteration 80
+Iteration 81
+Iteration 82
+Iteration 83
+Iteration 84
+Iteration 85
+Iteration 86
+Iteration 87
+Iteration 88
+Iteration 89
+Iteration 90
+Iteration 91
+Iteration 92
+Iteration 93
+Iteration 94
+Iteration 95
+Iteration 96
+Iteration 97
+Iteration 98
+Iteration 99
+Iteration 100
+Iteration 101
+Iteration 102
+Iteration 103
+Iteration 104
+Iteration 105
+Iteration 106
+Iteration 107
+Iteration 108
+Iteration 109
+Iteration 110
+Iteration 111
+Iteration 112
+Iteration 113
+Iteration 114
+Iteration 115
+Iteration 116
+Iteration 117
+Iteration 118
+Iteration 119
+Iteration 120
+Iteration 121
+Iteration 122
+Iteration 123
+Iteration 124
+Iteration 125
+Iteration 126
+Iteration 127
+Iteration 128
+Iteration 129
+Iteration 130
+Iteration 131
+Iteration 132
+Iteration 133
+Iteration 134
+Iteration 135
+Iteration 136
+Iteration 137
+Iteration 138
+Iteration 139

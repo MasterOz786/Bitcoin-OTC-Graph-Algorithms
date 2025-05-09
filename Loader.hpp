@@ -7,7 +7,7 @@
 #include <unordered_map>
 
 #define DATASET_FILENAME "soc-sign-bitcoinotc.csv"
-#define DIJKSTRA_DATASET_FILENAME "truncated-for-djisktra.csv"
+#define DIJKSTRA_DATASET_FILENAME "truncated-for-dijkstra.csv"
 #define BELLMANFORD_DATASET_FILENAME "truncated-for-bellmanFord.csv"
 
 struct Node {

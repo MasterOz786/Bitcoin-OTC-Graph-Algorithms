@@ -171,6 +171,7 @@ void Traversers::bfs(Graph* g, int source, int nodeCount, const char* rollNumber
     ::cout << "\n";
 
     // Write execution time
+    timeFile << "Input size: " << nodeCount << " nodes\n";
     timeFile << "Execution time: " << duration << " microseconds\n";
     ::cout << "BFS execution time: " << duration << " microseconds or " << duration / 1000.0 << " seconds\n";
 
@@ -273,7 +274,7 @@ void Traversers::dfs(Graph* g, int source, int nodeCount, const char* rollNumber
 
     // Write execution time
     timeFile << "Execution time: " << duration << " microseconds\n";
-    cout << "DFS execution time: " << duration << " microseconds or " << duration / 1000.0 << " seconds!\n";
+    cout << "DFS execution time: " << duration << " microseconds or " << duration / 1000000.0 << " seconds!\n";
 
     traversalFile.close();
     traceFile.close();

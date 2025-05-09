@@ -1,0 +1,2 @@
+Input size: 140 nodes
+Execution time: 0 milliseconds
