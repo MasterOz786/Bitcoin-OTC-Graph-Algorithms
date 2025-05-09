@@ -2,7 +2,23 @@
 #include "DisjointSet.hpp"
 #include <queue>
 #include <fstream>
-#include <algorithm>
+
+// Helper: selection sort for edges by weight (no <algorithm>)
+void kinareySelectionSort(std::vector<Kinara>& kinarey) {
+    for (size_t i = 0; i < kinarey.size(); ++i) {
+        size_t minIdx = i;
+        for (size_t j = i + 1; j < kinarey.size(); ++j) {
+            if (std::get<2>(kinarey[j]) < std::get<2>(kinarey[minIdx])) {
+                minIdx = j;
+            }
+        }
+        if (minIdx != i) {
+            Kinara temp = kinarey[i];
+            kinarey[i] = kinarey[minIdx];
+            kinarey[minIdx] = temp;
+        }
+    }
+}
 
 // prim ka algo, mst nikalnay wala, bohat kaam ka
 std::pair<std::vector<Kinara>, int> MST::prim(const Graph& graph, int shuruNode, const std::string& traceFile) {
@@ -14,18 +30,28 @@ std::pair<std::vector<Kinara>, int> MST::prim(const Graph& graph, int shuruNode,
     std::ofstream trace(traceFile); // file khol lo
 
     typedef std::tuple<int, int, int> T; // wazan, u, v
-    std::priority_queue<T, std::vector<T>, std::greater<T> > pq; // chota wazan pehle
+    // priority_queue ki jagah apna vector use karenge
+    std::vector<T> pq;
 
     hoGaye.insert(shuruNode); // pehla node ho gaya
     const std::vector<std::pair<int, int> >& shuruAdj = humsaya.at(shuruNode);
     for (size_t i = 0; i < shuruAdj.size(); ++i) {
         int v = shuruAdj[i].first;
         int w = shuruAdj[i].second;
-        pq.push(std::make_tuple(w, shuruNode, v)); // sab kinarey dal do
+        pq.push_back(std::make_tuple(w, shuruNode, v)); // sab kinarey dal do
     }
 
     while (!pq.empty() && mstKinarey.size() < graph.nodesKiTadaad() - 1) {
-        T top = pq.top(); pq.pop();
+        // Find min weight edge in pq
+        size_t minIdx = 0;
+        for (size_t i = 1; i < pq.size(); ++i) {
+            if (std::get<0>(pq[i]) < std::get<0>(pq[minIdx])) {
+                minIdx = i;
+            }
+        }
+        T top = pq[minIdx];
+        pq.erase(pq.begin() + minIdx);
+
         int w = std::get<0>(top);
         int u = std::get<1>(top);
         int v = std::get<2>(top);
@@ -40,7 +66,7 @@ std::pair<std::vector<Kinara>, int> MST::prim(const Graph& graph, int shuruNode,
             int to = vAdj[i].first;
             int w2 = vAdj[i].second;
             if (!hoGaye.count(to)) {
-                pq.push(std::make_tuple(w2, v, to));
+                pq.push_back(std::make_tuple(w2, v, to));
             }
         }
     }
@@ -52,9 +78,7 @@ std::pair<std::vector<Kinara>, int> MST::prim(const Graph& graph, int shuruNode,
 // kruskal ka algo, mst nikalta, union find use karta
 std::pair<std::vector<Kinara>, int> MST::kruskal(const Graph& graph, const std::string& traceFile) {
     std::vector<Kinara> kinarey = graph.sabKinareyLo(); // sab kinarey le lo
-    std::sort(kinarey.begin(), kinarey.end(), [](const Kinara& a, const Kinara& b) {
-        return std::get<2>(a) < std::get<2>(b); // wazan pe sort karo
-    });
+    kinareySelectionSort(kinarey); // apna sort
 
     DisjointSet ds;
     std::set<int> nodes = graph.sabNodesLo();

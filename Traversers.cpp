@@ -3,6 +3,8 @@
 #include <fstream>
 #include <chrono>
 #include <cstring>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -69,22 +71,45 @@ void Traversers::addEdge(Graph* g, int src, int dest, int weight) {
     g->adj[src] = e;
 }
 
-void Traversers::buildGraph(Nodes& data, Graph* g, int* nodes, int* nodeCount) {
+// Simplified buildGraph: purely random ordering, no maxNodesToInclude parameter
+#include <algorithm>
+#include <random>
+#include <ctime>
+
+void Traversers::buildGraph(
+    Nodes& data,
+    Graph* g,
+    int* nodes,
+    int* nodeCount
+) {
+    // Seed and engine for shuffling once
+    static std::mt19937 gen(static_cast<unsigned>(std::time(nullptr)));
+
+    // 1) Shuffle input edges
+    std::shuffle(data.begin(), data.end(), gen);
+
+    // 2) Initialize graph and node markers
     initGraph(g);
-    int maxNode = 0;
-    for (unsigned int i = 0; i < data.size(); i++) {
-        if (data[i].source > maxNode) maxNode = data[i].source;
-        if (data[i].dest > maxNode) maxNode = data[i].dest;
-        nodes[data[i].source] = 1;
-        nodes[data[i].dest] = 1;
+    int maxNodeId = 0;
+    for (auto& rec : data) {
+        maxNodeId = std::max(maxNodeId, std::max(rec.source, rec.dest));
     }
-    for (int i = 0; i <= maxNode; i++) {
-        if (nodes[i]) (*nodeCount)++;
-    }
-    for (unsigned int i = 0; i < data.size(); i++) {
-        addEdge(g, data[i].source, data[i].dest, data[i].weight);
+    std::memset(nodes, 0, (maxNodeId + 1) * sizeof(int));
+    *nodeCount = 0;
+
+    // 3) Mark all distinct nodes in random order
+    for (auto& rec : data) {
+        int u = rec.source;
+        int v = rec.dest;
+        if (!nodes[u]) { nodes[u] = 1; ++(*nodeCount); }
+        if (!nodes[v]) { nodes[v] = 1; ++(*nodeCount); }
     }
     g->nodeCount = *nodeCount;
+
+    // 4) Add all edges in the shuffled order
+    for (auto& rec : data) {
+        addEdge(g, rec.source, rec.dest, rec.weight);
+    }
 }
 
 // BFS related functions
@@ -164,10 +189,10 @@ void Traversers::bfs(Graph* g, int source, int nodeCount, const char* rollNumber
     auto duration = ::chrono::duration_cast<::chrono::microseconds>(end - start).count();
 
     // Write traversal
-    for (int i = 0; i < traversalSize; i++) {
-        traversalFile << traversal[i] << "\n";
-        ::cout << traversal[i] << " ";
-    }
+    // for (int i = 0; i < traversalSize; i++) {
+    //     traversalFile << traversal[i] << "\n";
+    //     ::cout << traversal[i] << " ";
+    // }
     ::cout << "\n";
 
     // Write execution time
@@ -194,7 +219,7 @@ void Traversers::dfs(Graph* g, int source, int nodeCount, const char* rollNumber
 
     ofstream traversalFile(traversalFileName);
     ofstream traceFile(traceFileName);
-    ofstream timeFile(timeFileName);
+    ofstream timeFile(timeFileName, ios::app);
 
     int visited[MAX_NODES] = {0};
     int traversal[MAX_NODES];
@@ -266,13 +291,14 @@ void Traversers::dfs(Graph* g, int source, int nodeCount, const char* rollNumber
     auto duration = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     // Write traversal
-    for (int i = 0; i < traversalSize; i++) {
-        traversalFile << traversal[i] << "\n";
-        cout << traversal[i] << " ";
-    }
+    // for (int i = 0; i < traversalSize; i++) {
+    //     traversalFile << traversal[i] << "\n";
+    //     cout << traversal[i] << " ";
+    // }
     cout << "\n";
 
     // Write execution time
+    timeFile << "Input size: " << nodeCount << " nodes\n";
     timeFile << "Execution time: " << duration << " microseconds\n";
     cout << "DFS execution time: " << duration << " microseconds or " << duration / 1000000.0 << " seconds!\n";
 
@@ -355,6 +381,7 @@ void Traversers::detectCycle(Graph* g, int nodeCount, const char* rollNumbers) {
     }
 
     // Write execution time
+    timeFile << "Input size: " << nodeCount << " nodes\n";
     timeFile << "Execution time: " << duration << " microseconds\n";
     cout << "Cycle detection execution time: " << duration << " microseconds\n";
 

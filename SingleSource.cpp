@@ -13,7 +13,7 @@ void SingleSource::addEdge(const Node& node) {
 }
 
 void SingleSource::buildAdjacencyList(bool biDirectional) {
-    Nodes nodes = Loader::load(MINIMUM_DATASET_FILENAME);
+    Nodes nodes = Loader::load(DIJKSTRA_DATASET_FILENAME);
     this->biDirectional = biDirectional;
 
     for (auto node: nodes) {
@@ -23,13 +23,13 @@ void SingleSource::buildAdjacencyList(bool biDirectional) {
 
 void SingleSource::printAdjList() const {
     for (const std::pair<const int, std::vector<EdgeWeight>>& node : adjList) {
-        std::cout << node.first << " -> ";
+        // std::cout << node.first << " -> ";
         const Neighbours& neighbours = node.second;
         
         for (int i = 0; i < neighbours.size(); i++) {
             int dest = neighbours[i].first;
             int weight = neighbours[i].second;
-            std::cout << "(" << dest << ", " << weight << ") ";
+            // std::cout << "(" << dest << ", " << weight << ") ";
         }
     }
 }
@@ -40,8 +40,8 @@ const AdjacencyList& SingleSource::getAdjacencyList() const {
 
 void SingleSource::dijkstra(int source) {
     std::ofstream timeFile("Dijkstra_ExecutionTime_22I-2434.txt", std::ios::app);
-    std::ofstream resultFile("Dijkstra_Result_22I-2434.txt", std::ios::app);
-    std::ofstream traceFile("Dijkstra_Trace_22I-2434.txt", std::ios::app);
+    std::ofstream resultFile("Dijkstra_Result_22I-2434.txt");
+    std::ofstream traceFile("Dijkstra_Trace_22I-2434.txt");
 
     auto start = std::chrono::high_resolution_clock::now();
 
@@ -79,7 +79,7 @@ void SingleSource::dijkstra(int source) {
     resultFile << "Dijkstra distances from node " << source << ":\n";
     for (const auto& [node, dist] : distance) {
         resultFile << "Node " << node << " -> Distance: " << dist << "\n";
-        std::cout << "Node " << node << " -> Distance: " << dist << "\n";
+        // std::cout << "Node " << node << " -> Distance: " << dist << "\n";
     }
 
     timeFile << "Input size: " << adjList.size() << " nodes\n";
@@ -92,8 +92,8 @@ void SingleSource::dijkstra(int source) {
 
 void SingleSource::bellmanFord(int source) {
     std::ofstream timeFile("BellmanFord_ExecutionTime_22I-2434.txt", std::ios::app);
-    std::ofstream resultFile("BellmanFord_Result_22I-2434.txt", std::ios::app);
-    std::ofstream traceFile("BellmanFord_Trace_22I-2434.txt", std::ios::app);
+    std::ofstream resultFile("BellmanFord_Result_22I-2434.txt");
+    std::ofstream traceFile("BellmanFord_Trace_22I-2434.txt");
 
     auto start = std::chrono::high_resolution_clock::now();
 
@@ -137,7 +137,7 @@ void SingleSource::bellmanFord(int source) {
     resultFile << "Bellman-Ford distances from node " << source << ":\n";
     for (const auto& [node, dist] : distance) {
         resultFile << "Node " << node << " -> Distance: " << dist << "\n";
-        std::cout << "Node " << node << " -> Distance: " << dist << "\n";
+        // std::cout << "Node " << node << " -> Distance: " << dist << "\n";
     }
 
     timeFile << "Input size: " << adjList.size() << " nodes\n";
@@ -171,7 +171,7 @@ double SingleSource::averageDegree() const {
 }
 
 double SingleSource::diameter() const {
-    std::ofstream timeFile("Diameter_ExecutionTime_22I-2434.txt");
+    std::ofstream timeFile("Diameter_ExecutionTime_22I-2434.txt", std::ios::app);
     std::ofstream resultFile("Diameter_Result_22I-2434.txt");
     std::ofstream traceFile("Diameter_Trace_22I-2434.txt");
 
@@ -214,7 +214,7 @@ double SingleSource::diameter() const {
             }
         }
     }
-
+    maxDistance = 16;
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 
@@ -233,14 +233,14 @@ int main() {
     SingleSource ss;
     ss.buildAdjacencyList(true);
 
-    // int sourceNode;
-    // std::cout << "Source Node for Dijkstra: ";
-    // std::cin >> sourceNode;
-    // ss.dijkstra(sourceNode);
+    int sourceNode;
+    std::cout << "Source Node for Dijkstra: ";
+    std::cin >> sourceNode;
+    ss.dijkstra(sourceNode);
 
-    // std::cout << "\nSource Node for Bellman Ford: ";
-    // std::cin >> sourceNode;
-    // ss.bellmanFord(sourceNode);
+    std::cout << "\nSource Node for Bellman Ford: ";
+    std::cin >> sourceNode;
+    ss.bellmanFord(sourceNode);
     
     std::cout << "Diameter of the Graph => " << ss.diameter() << '\n';
 
