@@ -1,0 +1,13 @@
+{
+  "name": "graph-algorithms",
+  "version": "1.0.0",
+  "description": "Graph algorithms visualization",
+  "main": "index.js",
+  "scripts": {
+    "start": "g++ -o graph *.cpp && ./graph",
+    "dev": "g++ -o graph *.cpp && ./graph"
+  },
+  "dependencies": {
+    "graphviz": "^0.0.9"
+  }
+}
