@@ -1,0 +1,267 @@
+Shortest paths from source node 1:
+
+Node 1: Distance = 0 (source)
+Node 2: Distance = 2.0, Path = 1 -> 2
+Node 3: Distance = 4.0, Path = 1 -> 2 -> 3
+Node 4: Distance = 7.0, Path = 1 -> 2 -> 4
+Node 5: Distance = 6.0, Path = 1 -> 5
+Node 6: Distance = 8.0, Path = 1 -> 7 -> 6
+Node 7: Distance = 1.0, Path = 1 -> 7
+Node 8: Distance = 7.0, Path = 1 -> 7 -> 21 -> 8
+Node 10: Distance = 8.0, Path = 1 -> 7 -> 21 -> 10
+Node 13: Distance = 7.0, Path = 1 -> 13
+Node 15: Distance = 9.0, Path = 1 -> 15
+Node 16: Distance = 9.0, Path = 1 -> 13 -> 16
+Node 17: Distance = 1.0, Path = 1 -> 17
+Node 19: Distance = 4.0, Path = 1 -> 19
+Node 20: Distance = 7.0, Path = 1 -> 7 -> 20
+Node 21: Distance = 6.0, Path = 1 -> 7 -> 21
+Node 23: Distance = 4.0, Path = 1 -> 23
+Node 25: Distance = 8.0, Path = 1 -> 7 -> 21 -> 10 -> 25
+Node 26: Distance = 16.0, Path = 1 -> 2 -> 4 -> 26
+Node 28: Distance = 9.0, Path = 1 -> 7 -> 28
+Node 29: Distance = 9.0, Path = 1 -> 7 -> 29
+Node 31: Distance = 8.0, Path = 1 -> 31
+Node 32: Distance = 9.0, Path = 1 -> 32
+Node 33: Distance = 9.0, Path = 1 -> 7 -> 33
+Node 34: Distance = 9.0, Path = 1 -> 34
+Node 35: Distance = 9.0, Path = 1 -> 7 -> 35
+Node 36: Distance = 8.0, Path = 1 -> 7 -> 36
+Node 37: Distance = 17.0, Path = 1 -> 7 -> 36 -> 37
+Node 39: Distance = 6.0, Path = 1 -> 7 -> 39
+Node 41: Distance = 6.0, Path = 1 -> 7 -> 41
+Node 44: Distance = 15.0, Path = 1 -> 7 -> 39 -> 44
+Node 45: Distance = 14.0, Path = 1 -> 7 -> 54 -> 45
+Node 46: Distance = 17.0, Path = 1 -> 7 -> 36 -> 46
+Node 47: Distance = 10.0, Path = 1 -> 7 -> 47
+Node 51: Distance = 18.0, Path = 1 -> 7 -> 29 -> 51
+Node 52: Distance = 18.0, Path = 1 -> 7 -> 29 -> 52
+Node 53: Distance = 7.0, Path = 1 -> 7 -> 53
+Node 54: Distance = 6.0, Path = 1 -> 7 -> 54
+Node 55: Distance = 10.0, Path = 1 -> 7 -> 55
+Node 56: Distance = 8.0, Path = 1 -> 56
+Node 57: Distance = 12.0, Path = 1 -> 2 -> 4 -> 57
+Node 60: Distance = 6.0, Path = 1 -> 7 -> 60
+Node 61: Distance = 15.0, Path = 1 -> 2 -> 4 -> 61
+Node 62: Distance = 4.0, Path = 1 -> 2 -> 62
+Node 64: Distance = 7.0, Path = 1 -> 64
+Node 65: Distance = 18.0, Path = 1 -> 7 -> 35 -> 65
+Node 66: Distance = 15.0, Path = 1 -> 2 -> 4 -> 66
+Node 68: Distance = 8.0, Path = 1 -> 68
+Node 69: Distance = 13.0, Path = 1 -> 23 -> 69
+Node 70: Distance = 15.0, Path = 1 -> 7 -> 41 -> 70
+Node 71: Distance = 9.0, Path = 1 -> 71
+Node 72: Distance = 9.0, Path = 1 -> 7 -> 72
+Node 74: Distance = 9.0, Path = 1 -> 74
+Node 75: Distance = 12.0, Path = 1 -> 2 -> 62 -> 75
+Node 76: Distance = 8.0, Path = 1 -> 76
+Node 77: Distance = 10.0, Path = 1 -> 2 -> 77
+Node 78: Distance = 9.0, Path = 1 -> 78
+Node 79: Distance = 18.0, Path = 1 -> 7 -> 35 -> 79
+Node 80: Distance = 16.0, Path = 1 -> 64 -> 80
+Node 81: Distance = 9.0, Path = 1 -> 81
+Node 83: Distance = 15.0, Path = 1 -> 7 -> 41 -> 83
+Node 86: Distance = 15.0, Path = 1 -> 7 -> 41 -> 86
+Node 87: Distance = 15.0, Path = 1 -> 7 -> 60 -> 87
+Node 88: Distance = 14.0, Path = 1 -> 7 -> 60 -> 88
+Node 89: Distance = 9.0, Path = 1 -> 7 -> 89
+Node 93: Distance = 16.0, Path = 1 -> 81 -> 93
+Node 94: Distance = 16.0, Path = 1 -> 64 -> 94
+Node 95: Distance = 24.0, Path = 1 -> 7 -> 41 -> 70 -> 95
+Node 96: Distance = 10.0, Path = 1 -> 7 -> 96
+Node 97: Distance = 17.0, Path = 1 -> 68 -> 97
+Node 99: Distance = 19.0, Path = 1 -> 23 -> 69 -> 99
+Node 100: Distance = 9.0, Path = 1 -> 7 -> 100
+Node 101: Distance = 9.0, Path = 1 -> 101
+Node 103: Distance = 18.0, Path = 1 -> 101 -> 103
+Node 104: Distance = 9.0, Path = 1 -> 104
+Node 105: Distance = 15.0, Path = 1 -> 7 -> 41 -> 105
+Node 106: Distance = 19.0, Path = 1 -> 7 -> 96 -> 106
+Node 107: Distance = 17.0, Path = 1 -> 81 -> 107
+Node 108: Distance = 13.0, Path = 1 -> 23 -> 108
+Node 109: Distance = 9.0, Path = 1 -> 109
+Node 110: Distance = 8.0, Path = 1 -> 7 -> 110
+Node 111: Distance = 8.0, Path = 1 -> 111
+Node 112: Distance = 12.0, Path = 1 -> 7 -> 60 -> 112
+Node 113: Distance = 10.0, Path = 1 -> 23 -> 113
+Node 114: Distance = 8.0, Path = 1 -> 114
+Node 115: Distance = 17.0, Path = 1 -> 2 -> 77 -> 115
+Node 116: Distance = 9.0, Path = 1 -> 7 -> 116
+Node 119: Distance = 9.0, Path = 1 -> 119
+Node 120: Distance = 17.0, Path = 1 -> 7 -> 29 -> 120
+Node 122: Distance = 10.0, Path = 1 -> 7 -> 122
+Node 125: Distance = 18.0, Path = 1 -> 23 -> 113 -> 125
+Node 127: Distance = 9.0, Path = 1 -> 119 -> 127
+Node 129: Distance = 15.0, Path = 1 -> 7 -> 54 -> 129
+Node 131: Distance = 19.0, Path = 1 -> 2 -> 77 -> 131
+Node 132: Distance = 9.0, Path = 1 -> 132
+Node 133: Distance = 10.0, Path = 1 -> 7 -> 133
+Node 134: Distance = 14.0, Path = 1 -> 141 -> 134
+Node 135: Distance = 9.0, Path = 1 -> 7 -> 135
+Node 137: Distance = 10.0, Path = 1 -> 7 -> 137
+Node 138: Distance = 9.0, Path = 1 -> 138
+Node 139: Distance = 18.0, Path = 1 -> 132 -> 139
+Node 140: Distance = 15.0, Path = 1 -> 7 -> 41 -> 140
+Node 141: Distance = 9.0, Path = 1 -> 141
+Node 142: Distance = 11.0, Path = 1 -> 2 -> 142
+Node 143: Distance = 7.0, Path = 1 -> 7 -> 143
+Node 144: Distance = 16.0, Path = 1 -> 7 -> 143 -> 144
+Node 145: Distance = 9.0, Path = 1 -> 145
+Node 146: Distance = 17.0, Path = 1 -> 114 -> 146
+Node 147: Distance = 15.0, Path = 1 -> 7 -> 41 -> 147
+Node 148: Distance = 14.0, Path = 1 -> 7 -> 60 -> 148
+Node 149: Distance = 11.0, Path = 1 -> 2 -> 149
+Node 150: Distance = 20.0, Path = 1 -> 2 -> 149 -> 150
+Node 152: Distance = 18.0, Path = 1 -> 132 -> 152
+Node 153: Distance = 16.0, Path = 1 -> 7 -> 143 -> 153
+Node 154: Distance = 27.0, Path = 1 -> 132 -> 152 -> 154
+Node 155: Distance = 17.0, Path = 1 -> 7 -> 110 -> 155
+Node 156: Distance = 10.0, Path = 1 -> 7 -> 156
+Node 157: Distance = 15.0, Path = 1 -> 7 -> 41 -> 157
+Node 158: Distance = 19.0, Path = 1 -> 23 -> 113 -> 158
+Node 159: Distance = 14.0, Path = 1 -> 7 -> 60 -> 159
+Node 160: Distance = 15.0, Path = 1 -> 7 -> 60 -> 160
+Node 161: Distance = 8.0, Path = 1 -> 7 -> 161
+Node 162: Distance = 15.0, Path = 1 -> 7 -> 41 -> 162
+Node 163: Distance = 15.0, Path = 1 -> 7 -> 41 -> 163
+Node 164: Distance = 11.0, Path = 1 -> 7 -> 60 -> 164
+Node 165: Distance = 9.0, Path = 1 -> 165
+Node 166: Distance = 10.0, Path = 1 -> 7 -> 166
+Node 167: Distance = 15.0, Path = 1 -> 7 -> 41 -> 167
+Node 168: Distance = 15.0, Path = 1 -> 7 -> 41 -> 168
+Node 169: Distance = 17.0, Path = 1 -> 132 -> 169
+Node 170: Distance = 20.0, Path = 1 -> 2 -> 142 -> 170
+Node 171: Distance = 18.0, Path = 1 -> 7 -> 29 -> 171
+Node 172: Distance = 15.0, Path = 1 -> 7 -> 60 -> 172
+Node 173: Distance = 15.0, Path = 1 -> 7 -> 6 -> 173
+Node 174: Distance = 15.0, Path = 1 -> 7 -> 41 -> 174
+Node 175: Distance = 9.0, Path = 1 -> 7 -> 175
+Node 176: Distance = 21.0, Path = 1 -> 7 -> 54 -> 45 -> 176
+Node 177: Distance = 17.0, Path = 1 -> 7 -> 161 -> 177
+Node 178: Distance = 14.0, Path = 1 -> 7 -> 60 -> 178
+Node 179: Distance = 10.0, Path = 1 -> 7 -> 179
+Node 180: Distance = 9.0, Path = 1 -> 180
+Node 181: Distance = 18.0, Path = 1 -> 132 -> 181
+Node 182: Distance = 23.0, Path = 1 -> 7 -> 60 -> 148 -> 182
+Node 183: Distance = 16.0, Path = 1 -> 7 -> 143 -> 183
+Node 184: Distance = 9.0, Path = 1 -> 7 -> 184
+Node 185: Distance = 10.0, Path = 1 -> 7 -> 185
+Node 186: Distance = 18.0, Path = 1 -> 7 -> 204 -> 186
+Node 187: Distance = 18.0, Path = 1 -> 7 -> 135 -> 187
+Node 188: Distance = 10.0, Path = 1 -> 7 -> 188
+Node 189: Distance = 17.0, Path = 1 -> 104 -> 189
+Node 190: Distance = 18.0, Path = 1 -> 104 -> 190
+Node 191: Distance = 12.0, Path = 1 -> 7 -> 60 -> 191
+Node 192: Distance = 16.0, Path = 1 -> 7 -> 143 -> 192
+Node 193: Distance = 15.0, Path = 1 -> 7 -> 60 -> 193
+Node 194: Distance = 15.0, Path = 1 -> 7 -> 60 -> 194
+Node 195: Distance = 10.0, Path = 1 -> 7 -> 195
+Node 196: Distance = 13.0, Path = 1 -> 2 -> 62 -> 196
+Node 198: Distance = 15.0, Path = 1 -> 7 -> 60 -> 198
+Node 199: Distance = 15.0, Path = 1 -> 7 -> 60 -> 199
+Node 200: Distance = 9.0, Path = 1 -> 7 -> 200
+Node 201: Distance = 18.0, Path = 1 -> 7 -> 206 -> 201
+Node 202: Distance = 13.0, Path = 1 -> 251 -> 202
+Node 203: Distance = 20.0, Path = 1 -> 2 -> 142 -> 203
+Node 204: Distance = 10.0, Path = 1 -> 7 -> 204
+Node 205: Distance = 15.0, Path = 1 -> 7 -> 60 -> 205
+Node 206: Distance = 9.0, Path = 1 -> 7 -> 206
+Node 207: Distance = 8.0, Path = 1 -> 7 -> 207
+Node 208: Distance = 13.0, Path = 1 -> 2 -> 62 -> 208
+Node 209: Distance = 13.0, Path = 1 -> 7 -> 60 -> 209
+Node 210: Distance = 10.0, Path = 1 -> 7 -> 210
+Node 211: Distance = 22.0, Path = 1 -> 251 -> 202 -> 211
+Node 212: Distance = 10.0, Path = 1 -> 7 -> 212
+Node 213: Distance = 14.0, Path = 1 -> 7 -> 60 -> 213
+Node 214: Distance = 14.0, Path = 1 -> 7 -> 60 -> 214
+Node 215: Distance = 16.0, Path = 1 -> 7 -> 143 -> 215
+Node 216: Distance = 23.0, Path = 1 -> 7 -> 60 -> 214 -> 216
+Node 217: Distance = 14.0, Path = 1 -> 7 -> 60 -> 217
+Node 218: Distance = 15.0, Path = 1 -> 7 -> 60 -> 218
+Node 219: Distance = 16.0, Path = 1 -> 64 -> 219
+Node 220: Distance = 30.0, Path = 1 -> 7 -> 54 -> 45 -> 176 -> 220
+Node 221: Distance = 18.0, Path = 1 -> 7 -> 206 -> 221
+Node 222: Unreachable
+Node 223: Distance = 3.0, Path = 1 -> 223
+Node 224: Distance = 12.0, Path = 1 -> 7 -> 60 -> 224
+Node 225: Distance = 9.0, Path = 1 -> 225
+Node 227: Distance = 9.0, Path = 1 -> 227
+Node 228: Distance = 15.0, Path = 1 -> 7 -> 60 -> 228
+Node 229: Distance = 14.0, Path = 1 -> 7 -> 60 -> 229
+Node 230: Distance = 15.0, Path = 1 -> 7 -> 60 -> 230
+Node 231: Distance = 13.0, Path = 1 -> 23 -> 231
+Node 232: Distance = 8.0, Path = 1 -> 7 -> 232
+Node 233: Distance = 18.0, Path = 1 -> 7 -> 206 -> 233
+Node 234: Distance = 9.0, Path = 1 -> 234
+Node 235: Distance = 26.0, Path = 1 -> 7 -> 29 -> 171 -> 235
+Node 236: Distance = 22.0, Path = 1 -> 251 -> 202 -> 236
+Node 237: Distance = 22.0, Path = 1 -> 251 -> 202 -> 237
+Node 238: Distance = 20.0, Path = 1 -> 2 -> 149 -> 238
+Node 239: Distance = 15.0, Path = 1 -> 7 -> 39 -> 239
+Node 240: Distance = 9.0, Path = 1 -> 7 -> 240
+Node 241: Distance = 22.0, Path = 1 -> 23 -> 231 -> 241
+Node 242: Distance = 10.0, Path = 1 -> 7 -> 60 -> 242
+Node 243: Distance = 7.0, Path = 1 -> 7 -> 243
+Node 244: Distance = 12.0, Path = 1 -> 7 -> 60 -> 244
+Node 245: Distance = 9.0, Path = 1 -> 245
+Node 246: Distance = 18.0, Path = 1 -> 7 -> 35 -> 246
+Node 247: Distance = 9.0, Path = 1 -> 247
+Node 248: Distance = 17.0, Path = 1 -> 7 -> 35 -> 248
+Node 249: Distance = 16.0, Path = 1 -> 64 -> 249
+Node 250: Distance = 13.0, Path = 1 -> 7 -> 60 -> 250
+Node 251: Distance = 8.0, Path = 1 -> 251
+Node 252: Distance = 15.0, Path = 1 -> 7 -> 60 -> 252
+Node 253: Unreachable
+Node 254: Distance = 10.0, Path = 1 -> 7 -> 254
+Node 255: Distance = 15.0, Path = 1 -> 7 -> 60 -> 255
+Node 256: Distance = 18.0, Path = 1 -> 141 -> 256
+Node 257: Distance = 6.0, Path = 1 -> 7 -> 60 -> 257
+Node 258: Distance = 17.0, Path = 1 -> 7 -> 6 -> 258
+Node 259: Distance = 26.0, Path = 1 -> 7 -> 6 -> 258 -> 259
+Node 260: Distance = 7.0, Path = 1 -> 7 -> 260
+Node 261: Distance = 9.0, Path = 1 -> 261
+Node 262: Distance = 17.0, Path = 1 -> 7 -> 207 -> 262
+Node 263: Distance = 12.0, Path = 1 -> 23 -> 263
+Node 264: Distance = 12.0, Path = 1 -> 7 -> 60 -> 264
+Node 265: Distance = 12.0, Path = 1 -> 7 -> 60 -> 265
+Node 266: Distance = 9.0, Path = 1 -> 7 -> 266
+Node 267: Distance = 18.0, Path = 1 -> 7 -> 35 -> 267
+Node 268: Distance = 15.0, Path = 1 -> 7 -> 6 -> 268
+Node 269: Distance = 10.0, Path = 1 -> 7 -> 269
+Node 270: Unreachable
+Node 271: Distance = 9.0, Path = 1 -> 271
+Node 272: Distance = 9.0, Path = 1 -> 7 -> 272
+Node 273: Distance = 14.0, Path = 1 -> 7 -> 60 -> 273
+Node 274: Distance = 9.0, Path = 1 -> 274
+Node 275: Distance = 18.0, Path = 1 -> 141 -> 275
+Node 276: Distance = 13.0, Path = 1 -> 7 -> 60 -> 276
+Node 277: Unreachable
+Node 278: Distance = 20.0, Path = 1 -> 251 -> 202 -> 278
+Node 279: Distance = 12.0, Path = 1 -> 7 -> 60 -> 257 -> 279
+Node 280: Distance = 18.0, Path = 1 -> 7 -> 29 -> 280
+Node 281: Distance = 27.0, Path = 1 -> 7 -> 29 -> 280 -> 281
+Node 282: Distance = 15.0, Path = 1 -> 2 -> 4 -> 282
+Node 283: Unreachable
+Node 284: Unreachable
+Node 285: Distance = 10.0, Path = 1 -> 7 -> 285
+Node 286: Distance = 22.0, Path = 1 -> 251 -> 202 -> 286
+Node 287: Distance = 27.0, Path = 1 -> 141 -> 256 -> 287
+Node 288: Distance = 22.0, Path = 1 -> 251 -> 202 -> 288
+Node 290: Distance = 25.0, Path = 1 -> 7 -> 143 -> 215 -> 290
+Node 291: Distance = 18.0, Path = 1 -> 245 -> 291
+Node 292: Distance = 22.0, Path = 1 -> 251 -> 202 -> 292
+Node 293: Distance = 18.0, Path = 1 -> 7 -> 135 -> 293
+Node 294: Distance = 10.0, Path = 1 -> 7 -> 294
+Node 295: Distance = 17.0, Path = 1 -> 274 -> 295
+Node 296: Distance = 9.0, Path = 1 -> 296
+Node 297: Distance = 23.0, Path = 1 -> 7 -> 60 -> 229 -> 297
+Node 298: Distance = 23.0, Path = 1 -> 7 -> 60 -> 299 -> 298
+Node 299: Distance = 14.0, Path = 1 -> 7 -> 60 -> 299
+Node 301: Distance = 16.0, Path = 1 -> 64 -> 301
+Node 302: Distance = 18.0, Path = 1 -> 7 -> 29 -> 302
+Node 303: Distance = 18.0, Path = 1 -> 7 -> 135 -> 303
+Node 304: Distance = 18.0, Path = 1 -> 7 -> 29 -> 304
+Node 305: Distance = 24.0, Path = 1 -> 2 -> 4 -> 282 -> 305
+Node 306: Distance = 24.0, Path = 1 -> 2 -> 4 -> 282 -> 306
+Node 307: Distance = 18.0, Path = 1 -> 7 -> 206 -> 307
+Node 308: Distance = 14.0, Path = 1 -> 7 -> 39 -> 308
