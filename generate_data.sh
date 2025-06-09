@@ -2,9 +2,9 @@
 #!/bin/bash
 
 # Compile programs
-g++ -o traversers Traversers.cpp Loader.cpp -std=c++11
-g++ -o singlesource SingleSource.cpp Loader.cpp -std=c++11
-g++ -o m main.cpp Timer.cpp DisjointSet.cpp Graph.cpp MST.cpp Loader.cpp
+g++ -o traversers Traversers.cpp Loader_222434_222515_222511.cpp -std=c++11
+g++ -o singlesource SingleSource_222434_222515_222511.cpp Loader_222434_222515_222511.cpp -std=c++11
+g++ -o m main_222434_222515_222511.cpp Timer_222434_222515_222511.cpp DisjointSet_222434_222515_222511.cpp Graph_222434_222515_222511.cpp MST_222434_222515_222511.cpp Loader_222434_222515_222511.cpp
 
 # Run traversal algorithms (BFS, DFS, Cycle detection) with different source nodes
 echo "Generating data for graph traversal algorithms..."
@@ -24,6 +24,9 @@ done
 
 # Run Prims and Kruskal
 ./m
+
+# Run visualizations
+python visualize_222434_222515_222511.py
 
 echo "Data generation complete!"
 
